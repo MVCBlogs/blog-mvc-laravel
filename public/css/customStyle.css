@@ -1,0 +1,22 @@
+body{
+    font-weight: bold;
+   background-color: pink !important;
+}   
+
+.card-header{
+    text-align: center;
+}
+.btn-enlace{
+   text-align: center;
+   position: relative;
+   left: 295px;
+   border-radius: 10px;
+   box-shadow: 5px 5px 4px gray;
+   font-weight: bold;
+   font-style: oblique;
+   margin: 30px;
+}
+
+.datetime{
+    font-size: 11px;
+}
