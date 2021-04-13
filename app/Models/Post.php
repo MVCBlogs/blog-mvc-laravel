@@ -48,6 +48,16 @@ class Post extends Model{
         $this->attributes['comment'] = $comment;
         
     }
+    public function getDate()
+    {
+        return $this->attributes['created_at'];
+    }
+ 
+    public function setDate($date)
+    {
+        $this->attributes['created_at'] = $date;
+        
+    }
     public function comments(){
         return $this->hasMany(Comment::class);
     }

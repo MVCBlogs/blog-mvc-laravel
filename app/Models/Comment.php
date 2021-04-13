@@ -7,7 +7,7 @@ use Illuminate\Http\Request;
  
 class Comment extends Model
 {
-    //attributes id, post_id,message, stars, created_at, updated_at
+    //attributes id, post_id,message, created_at, updated_at
     protected $fillable = ['post_id','message'];
  
     public function getId()
@@ -37,15 +37,14 @@ class Comment extends Model
     {
         $this->attributes['message'] = $message;
     }
-
-    public function getStars()
+    public function getCommentDate()
     {
-        return $this->attributes['stars'];
+        return $this->attributes['created_at'];
     }
  
-    public function setStars($star)
+    public function setCommentDate($commentDate)
     {
-        $this->attributes['stars'] = $star;
+        $this->attributes['created_at'] = $commentDate;
     }
  
     public function post(){

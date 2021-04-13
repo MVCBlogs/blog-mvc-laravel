@@ -20,9 +20,9 @@
  
                 <form method="POST" action="{{ route('post.save') }}">
                     @csrf
-                    <input type="text" placeholder="{{__('messages.placeholdertitleText')}}" name="name" value="{{ old('name') }}" />
-                    <input type="text" placeholder="{{__('messages.placeholderdescriptionText')}}" name="description" value="{{ old('price') }}" />
-                    <input type="submit" value="{{__('messages.sendbuttonText')}}" />
+                    <input type="text" placeholder="{{__('messages.placeholderTitleText')}}" name="name" value="{{ old('name') }}" />
+                    <input type="text" placeholder="{{__('messages.placeholderDescriptionText')}}" name="description" value="{{ old('price') }}" />
+                    <input type="submit" value="{{__('messages.sendButtonText')}}" />
                 </form>
  
                 </div>
@@ -31,7 +31,7 @@
         <div class="row p-5">
             <div class="col-md-12">
                 <ul id="errors">
-                    <h1>{{__('messages.allpostsTitle')}}:</h1>
+                    <h1>{{__('messages.allPostsTitle')}}:</h1>
                     @foreach($data["posts"] as $post)
                     <br>
                      <li>Post N. {{ $post->getId() }} - Title: {{$post->getName()}} - <a href="{{route('post.show',['id' => $post->getId()])}}"> {{__("messages.showDetails")}} </a></li>

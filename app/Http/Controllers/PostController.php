@@ -34,9 +34,8 @@ class PostController extends Controller
    
  
         $data["title"] = $post->getName();
-        $data["posts"] = $post;
-        $data["date"]=$post->created_at->format('y-m-d');
-        $data["datetime"]=$post->created_at->format('h:i');
+        $data["post"] = $post;
+        $data["date"]=$post->getDate();
         return view('post.show')->with("data",$data);
 
     }
