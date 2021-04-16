@@ -13,13 +13,10 @@ use Illuminate\Support\Facades\Route;
 |
 */
 
-// Route::get('/', function () {
-//     return view('welcome');
-// });
-Route::get('/', 'App\Http\Controllers\WelcomeController@index')->name("welcome");
-Route::get('/index', 'App\Http\Controllers\HomeController@index')->name("home.index");
-Route::get('/post/show/{id}', 'App\Http\Controllers\PostController@show')->name("post.show");
-Route::get('/post/create', 'App\Http\Controllers\PostController@create')->name("post.create");
-Route::post('/post/save', 'App\Http\Controllers\PostController@save')->name("post.save");
-Route::post('/post/saveComment', 'App\Http\Controllers\CommentController@saveComment')->name("post.saveComment");
-
+Route::get('/', 'App\Http\Controllers\HomeController@index')->name("home.index");
+Route::get('/about', 'App\Http\Controllers\HomeController@about')->name("home.about");
+Route::get('/posts', 'App\Http\Controllers\PostController@list')->name("posts.list");
+Route::post('/posts/save', 'App\Http\Controllers\PostController@save')->name("posts.save");
+Route::post('/posts/saveComment', 'App\Http\Controllers\PostController@saveComment')->name("posts.saveComment");
+Route::get('/posts/{id}', 'App\Http\Controllers\PostController@show')->name("posts.show");
+Route::delete('/posts/deleteComment/{id}', 'App\Http\Controllers\PostController@deleteComment')->name("posts.deleteComment");

@@ -15,10 +15,8 @@ class CreatePostsTable extends Migration
     {
         Schema::create('posts', function (Blueprint $table) {
             $table->bigIncrements('id');
-            $table->text('name');
+            $table->text('title');
             $table->text('description');
-            // $table->text('comment');
-            // $table->foreign('comment')->references('id')->on('comments');
             $table->timestamps();
         });
     }
