@@ -27,7 +27,7 @@
       <h2 class="post-title">Comments</h2>
       <ul>
       @foreach($data["post"]->comments as $comment)
-        <li>{{ $comment->getMessage() }} - {{ $comment->getCommentDate()}}
+        <li>{{ $comment->getMessage() }} - {{ $comment->getCreatedAt()}}
           <form method="POST" action="{{ route('posts.deleteComment',['id' => $comment->getId()]) }}">
             @csrf
             @method('DELETE')

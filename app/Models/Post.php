@@ -9,7 +9,7 @@ use Illuminate\Http\Request;
 class Post extends Model
 {
 
-    //attributes id, title, description, comment, created_at, updated_at
+    //attributes id, title, description, created_at, updated_at
     protected $fillable = ['title','description'];
 
     public function getId()
@@ -40,26 +40,6 @@ class Post extends Model
     public function setDescription($description)
     {
         $this->attributes['description'] = $description;
-    }
-  
-    public function getComment()
-    {
-        return $this->attributes['comment'];
-    }
-
-    public function setComment($comment)
-    {
-        $this->attributes['comment'] = $comment;
-    }
-  
-    public function getDate()
-    {
-        return $this->attributes['created_at'];
-    }
-
-    public function setDate($date)
-    {
-        $this->attributes['created_at'] = $date;
     }
 
     public function getCreatedAt()

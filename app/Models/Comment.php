@@ -40,16 +40,6 @@ class Comment extends Model
         $this->attributes['message'] = $message;
     }
 
-    public function getCommentDate()
-    {
-        return $this->attributes['created_at'];
-    }
-
-    public function setCommentDate($commentDate)
-    {
-        $this->attributes['created_at'] = $commentDate;
-    }
-
     public function getCreatedAt()
     {
         return $this->attributes['created_at'];
