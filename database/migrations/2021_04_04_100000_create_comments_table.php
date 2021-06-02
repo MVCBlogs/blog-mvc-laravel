@@ -17,7 +17,6 @@ class CreateCommentsTable extends Migration
             $table->bigInteger('post_id')->unsigned();
             $table->foreign('post_id')->references('id')->on('posts');
             $table->text('message');
-            $table->Integer('stars')->nullable();
             $table->timestamps();
         });
     }
