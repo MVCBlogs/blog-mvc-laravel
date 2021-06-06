@@ -10,7 +10,7 @@ class PostController extends Controller
 {
     public static function list()
     {
-        $data = []; //to be sent to the view
+        $data = [];
         $data["title"] = "Posts";
         $data["description"] = "List of posts";
         $data["posts"] = Post::all();
@@ -20,7 +20,7 @@ class PostController extends Controller
 
     public static function show($id)
     {
-        $data = []; //to be sent to the view
+        $data = [];
         $post = Post::findOrFail($id);
 
         $data["title"] = $post->getTitle();
