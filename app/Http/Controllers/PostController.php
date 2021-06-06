@@ -8,7 +8,7 @@ use App\Models\Comment;
 
 class PostController extends Controller
 {
-    public function list()
+    public static function list()
     {
         $data = []; //to be sent to the view
         $data["title"] = "Posts";
@@ -18,7 +18,7 @@ class PostController extends Controller
         return view('post.list')->with("data", $data);
     }
 
-    public function show($id)
+    public static function show($id)
     {
         $data = []; //to be sent to the view
         $post = Post::findOrFail($id);
@@ -30,7 +30,7 @@ class PostController extends Controller
         return view('post.show')->with("data", $data);
     }
 
-    public function save(Request $request)
+    public static function save(Request $request)
     {
         Post::validate($request);
         Post::create($request->only(["title","description"]));
@@ -38,7 +38,7 @@ class PostController extends Controller
         return back()->with('success', 'Post created successfully!');
     }
 
-    public function saveComment(Request $request)
+    public static function saveComment(Request $request)
     {
         Comment::validate($request);
         Comment::create($request->only(["post_id","message"]));
@@ -46,7 +46,7 @@ class PostController extends Controller
         return back()->with('success', 'Comment created successfully!');
     }
 
-    public function deleteComment($id)
+    public static function deleteComment($id)
     {
         $comment = Comment::findOrFail($id);
         $comment->delete();

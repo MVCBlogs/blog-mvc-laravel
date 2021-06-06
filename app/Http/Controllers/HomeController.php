@@ -4,7 +4,7 @@ namespace App\Http\Controllers;
 
 class HomeController extends Controller
 {
-    public function index()
+    public static function index()
     {
         $data = [];
         $data["title"] = "Blog - Laravel";
@@ -12,7 +12,7 @@ class HomeController extends Controller
         return view('home.index')->with("data", $data);
     }
 
-    public function about()
+    public static function about()
     {
         $data = [];
         $data["title"] = "About us";
