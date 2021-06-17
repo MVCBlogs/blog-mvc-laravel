@@ -14,7 +14,6 @@ class PostController extends Controller
         $data["title"] = "Posts";
         $data["description"] = "List of posts";
         $data["posts"] = Post::all();
-       
         return view('post.list')->with("data", $data);
     }
 
@@ -22,11 +21,9 @@ class PostController extends Controller
     {
         $data = [];
         $post = Post::findOrFail($id);
-
         $data["title"] = $post->getTitle();
         $data["description"] = $post->getDescription();
         $data["post"] = $post;
-
         return view('post.show')->with("data", $data);
     }
 
@@ -34,23 +31,20 @@ class PostController extends Controller
     {
         Post::validate($request);
         Post::create($request->only(["title","description"]));
-
-        return back()->with('success', 'Post created successfully!');
+        return back();
     }
 
     public function saveComment(Request $request)
     {
         Comment::validate($request);
         Comment::create($request->only(["post_id","message"]));
-
-        return back()->with('success', 'Comment created successfully!');
+        return back();
     }
 
     public function deleteComment($id)
     {
         $comment = Comment::findOrFail($id);
         $comment->delete();
-
-        return back()->with('success', 'Comment deleted successfully!');
+        return back();
     }
 }
