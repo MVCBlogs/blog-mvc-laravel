@@ -44,11 +44,11 @@
             @csrf
             <div class="form-group">
               <label>Post title:</label>
-              <input type="text" name="title" class="form-control" value="{{ old('title') }}" placeholder="Enter title">
+              <input type="text" name="title" required class="form-control" value="{{ old('title') }}" placeholder="Enter title">
             </div>
             <div class="form-group">
               <label>Post description:</label>
-              <textarea class="form-control" name="description" value="{{ old('description') }}" rows="3" placeholder="Enter description"></textarea>
+              <textarea class="form-control" name="description" required value="{{ old('description') }}" rows="3" placeholder="Enter description"></textarea>
             </div>
             <button type="submit" class="btn btn-primary">Submit</button>
           </form>

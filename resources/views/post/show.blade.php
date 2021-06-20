@@ -61,7 +61,7 @@
             @csrf
             <div class="form-group">
               <label>Comment message:</label>
-              <textarea class="form-control" name="message" value="{{ old('message') }}" rows="3" placeholder="Enter message"></textarea>
+              <textarea class="form-control" required name="message" value="{{ old('message') }}" rows="3" placeholder="Enter message"></textarea>
             </div>
             <input type="hidden" name="post_id" value="{{ $data['post']->getId() }}" />
             <button type="submit" class="btn btn-primary">Submit</button>
