@@ -33,14 +33,14 @@
           Create a new post
         </div>
         <div class="card-body">
-          @if($errors->any())
-            <ul class="errors">
-              @foreach($errors->all() as $error)
-                <li>{{ $error }}</li>
-              @endforeach
-            </ul>
-          @endif
           <form method="POST" action="{{ route('posts.save') }}">
+            @if($errors->any())
+              <ul class="errors">
+                @foreach($errors->all() as $error)
+                  <li>{{ $error }}</li>
+                @endforeach
+              </ul>
+            @endif
             @csrf
             <div class="form-group">
               <label>Post title:</label>
